@@ -20,6 +20,10 @@
             font-style: normal;
         }
 
+        .button-bg {
+            background-color: #25252520;
+        }
+
         .red {
             background-color: #FF1F3D;
         }
@@ -29,12 +33,12 @@
 <body class="w-[95%] mx-auto inter">
     <header>
 
-        <nav class="border-b-2">
+        <nav class="border-b-2 border-[#17171720]">
             <div class="navbar bg-base-100 shadow-sm">
                 <div class="navbar-start">
                     <div class="dropdown">
                         <div tabindex="0" role="button" class="btn btn-ghost">
-                            <img class="w-full" src="Logo.png" alt="">
+                            <img class="lg:w-[80%]" src="Logo.png" alt="">
                         </div>
                         <ul tabindex="0"
                             class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
@@ -44,27 +48,75 @@
                         </ul>
                     </div>
                 </div>
-                <div class="navbar-center bg-slate-100">
+                <div class="navbar-center button-bg rounded-md">
                     <a class="btn  btn-ghost lg:text-xl">Sort By View</a>
                 </div>
                 <div class="navbar-end">
                     <button class="btn  red btn-ghost text-white">
                         Blog
                     </button>
-                
+
                 </div>
             </div>
         </nav>
+
+        <!-- nav button -container -->
+
+        <div class="flex justify-center">
+            <div id="button-container" class="flex my-8 gap-5 ">
+                <div>
+                    <button class="btn  hover:bg-[#FF1F3D] hover:text-white btn-sm">All</button>
+                </div>
+
+            </div>
+        </div>
     </header>
 
     <main>
 
+        <!-- card section  -->
+
+        <section>
+            <div id="card-container" class="grid lg:grid-cols-4 gap-4">
+
+
+
+
+
+
+
+
+
+            </div>
+        </section>
 
     </main>
 
     <footer>
 
-
+        <footer class="footer sm:footer-horizontal bg-[#17171720]  text-base-content p-10">
+            <nav>
+                <h6 class="footer-title">Services</h6>
+                <a class="link link-hover">Branding</a>
+                <a class="link link-hover">Design</a>
+                <a class="link link-hover">Marketing</a>
+                <a class="link link-hover">Advertisement</a>
+            </nav>
+            <nav>
+                <h6 class="footer-title">Company</h6>
+                <a class="link link-hover">About us</a>
+                <a class="link link-hover">Contact</a>
+                <a class="link link-hover">Jobs</a>
+                <a class="link link-hover">Press kit</a>
+            </nav>
+            <nav>
+                <h6 class="footer-title">Legal</h6>
+                <a class="link link-hover">Terms of use</a>
+                <a class="link link-hover">Privacy policy</a>
+                <a class="link link-hover">Cookie policy</a>
+            </nav>
+        </footer>
+    
 
     </footer>
     <script src="home.js"></script>
