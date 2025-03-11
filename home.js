@@ -23,7 +23,7 @@ function displayCetagories(data) {
         const div = document.createElement('div')
         div.innerHTML = `
         
-            <button class="btn  hover:bg-[#FF1F3D] hover:text-white  btn-sm">${element.category}</button>
+            <button onclick=cetagoryWiseVedios('${element.category_id}') class="btn  hover:bg-[#FF1F3D] hover:text-white  btn-sm">${element.category}</button>
         
         `
         parent.appendChild(div)
@@ -46,10 +46,25 @@ loadVidos()
 
 const LoadVedios = (data) => {
 
+    
+    if (data.length === 0) {
+
+        document.getElementById("notfound").classList.remove('hidden')
+        document.getElementById("notfound").classList.add('block')
+
+        // console.log(document.getElementById("not-found").classList)
+
+        return;
+    }
+    document.getElementById("notfound").classList.remove('block')
+    document.getElementById("notfound").classList.add('hidden')
+
+
+
     const parent = document.getElementById('card-container')
     data.forEach(element => {
-        console.log(element.authors[0].profile_picture)
-        console.log(element)
+        // console.log(element.authors[0].profile_picture)
+        // console.log(element)
         const div = document.createElement('div')
 
         div.innerHTML = `
@@ -82,4 +97,18 @@ const LoadVedios = (data) => {
         `
         parent.appendChild(div)
     })
+}
+
+const cetagoryWiseVedios = (id) => {
+    try {
+        fetch(`https://openapi.programming-hero.com/api/phero-tube/category/${id}`)
+            .then((res) => res.json())
+            .then((data) => {
+                document.getElementById('card-container').innerHTML = ""
+                LoadVedios(data.category)
+            })
+    }
+    catch {
+        alert('Cetagories wise vedio not found')
+    }
 }

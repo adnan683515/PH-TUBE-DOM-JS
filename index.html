@@ -65,7 +65,7 @@
         <div class="flex justify-center">
             <div id="button-container" class="flex my-8 gap-5 ">
                 <div>
-                    <button class="btn  hover:bg-[#FF1F3D] hover:text-white btn-sm">All</button>
+                    <button onclick="loadVidos()" class="btn  hover:bg-[#FF1F3D] hover:text-white btn-sm">All</button>
                 </div>
 
             </div>
@@ -78,8 +78,7 @@
 
         <section>
             <div id="card-container" class="grid lg:grid-cols-4 gap-4">
-
-
+            
 
 
 
@@ -88,6 +87,17 @@
 
 
             </div>
+            <div id="notfound" class="hidden lg:h-96">
+                <div class="flex  justify-center items-center ">
+                    <div class="space-y-8">
+                        <div class="flex justify-center">
+                            <img src="Icon.png" alt="">
+                        </div>
+                        <h1 class="text-xl font-bold">OOP'S Sorry! There is no Content here</h1>
+                    </div>
+                </div>
+            </div>
+
         </section>
 
     </main>
@@ -116,7 +126,7 @@
                 <a class="link link-hover">Cookie policy</a>
             </nav>
         </footer>
-    
+
 
     </footer>
     <script src="home.js"></script>
