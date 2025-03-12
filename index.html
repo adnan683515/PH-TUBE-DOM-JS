@@ -50,8 +50,8 @@
                         </ul>
                     </div>
                 </div>
-                <div class="navbar-center button-bg rounded-md">
-                    <input id="search-input" type="text" placeholder="find your vedios" class="input" />
+                <div class="navbar-center w-[50%] lg:w-[20%] button-bg rounded-md">
+                    <input id="search-input" type="text" placeholder="Find your vedios" class="input border-1" />
                 </div>
                 <div class="navbar-end">
                     <button class="btn  red btn-ghost text-white">
@@ -82,6 +82,7 @@
             <div id="card-container" class="grid lg:grid-cols-4 gap-4">
 
 
+                
 
 
 
@@ -89,8 +90,11 @@
 
 
             </div>
+            <div id="loading" class="flex justify-center items-center">
+                <span  class="loading  loading-dots loading-xl"></span>
+            </div>
             <div id="notfound" class="hidden lg:h-96">
-                <div class="flex  justify-center items-center ">
+                <div class="flex  justify-center items-center">
                     <div class="space-y-8">
                         <div class="flex justify-center">
                             <img src="Icon.png" alt="">
@@ -111,7 +115,7 @@
                 <div class="modal-box">
                     <h1 class="mb-4">Vedio Details Below</h1>
                     <div id="modal-vedio-card">
-                        
+
                     </div>
                     <div class="modal-action">
                         <form method="dialog">
