@@ -51,7 +51,7 @@
                     </div>
                 </div>
                 <div class="navbar-center button-bg rounded-md">
-                    <a class="btn  btn-ghost lg:text-xl">Sort By View</a>
+                    <input id="search-input" type="text" placeholder="find your vedios" class="input" />
                 </div>
                 <div class="navbar-end">
                     <button class="btn  red btn-ghost text-white">
@@ -109,8 +109,10 @@
             <!-- <button class="btn" onclick="details_modal.showModal()">open modal</button> -->
             <dialog id="details_modal" class="modal modal-bottom sm:modal-middle">
                 <div class="modal-box">
-                    <h3 class="text-lg font-bold">Hello!</h3>
-                    <p class="py-4">Press ESC key or click the button below to close</p>
+                    <h1 class="mb-4">Vedio Details Below</h1>
+                    <div id="modal-vedio-card">
+                        
+                    </div>
                     <div class="modal-action">
                         <form method="dialog">
                             <!-- if there is a button in form, it will close the modal -->
