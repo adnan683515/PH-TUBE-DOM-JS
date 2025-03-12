@@ -1,7 +1,15 @@
 
-
+function showLoader(){
+    document.getElementById('loading').classList.remove('hidden')
+    
+}
+function hideLoader(){
+    document.getElementById('loading').classList.add('hidden')
+}
 
 function loadCetagories() {
+
+    
 
     try {
         fetch('https://openapi.programming-hero.com/api/phero-tube/categories')
@@ -15,7 +23,7 @@ function loadCetagories() {
 loadCetagories()
 
 function displayCetagories(data) {
-
+    
     const parent = document.getElementById('button-container')
 
     data.forEach(element => {
@@ -28,10 +36,12 @@ function displayCetagories(data) {
         `
         parent.appendChild(div)
     });
+
 }
 
 
 function loadVidos() {
+    showLoader()
     try {
         fetch('https://openapi.programming-hero.com/api/phero-tube/videos')
             .then((res) => res.json())
@@ -98,10 +108,12 @@ function vedioDetalis(id) {
 }
 
 const LoadVedios = (data) => {
-
+    
+    showLoader()
 
     if (data.length === 0) {
 
+        hideLoader()
         document.getElementById("notfound").classList.remove('hidden')
         document.getElementById("notfound").classList.add('block')
         return;
@@ -155,6 +167,7 @@ const LoadVedios = (data) => {
         `
         parent.appendChild(div)
     })
+    hideLoader()
 }
 
 
@@ -163,6 +176,7 @@ const LoadVedios = (data) => {
 
 
 const cetagoryWiseVedios = (id) => {
+    // showLoader()
     try {
         fetch(`https://openapi.programming-hero.com/api/phero-tube/category/${id}`)
             .then((res) => res.json())
